@@ -69,16 +69,6 @@ sudo apt install cmatrix btop htop fastfetch mousepad evince eog ffmpeg obs-stud
 
 ---
 
-## Limpiar sistema
-
-```bash
-sudo apt autoremove -y
-sudo apt clean
-sudo apt autoclean
-```
-
----
-
 ## Limpieza final
 
 ```bash
