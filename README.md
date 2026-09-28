@@ -3,7 +3,7 @@
 Configuración básica y programas esenciales para una instalación nueva de Linux.
 
 
-## Debian 13 Trixie Agregar repositorios
+## Agregar repositorios
 
 > Configuración de los repositorios oficiales de Debian Trixie, incluyendo `contrib`, `non-free` y `non-free-firmware`.
 
@@ -20,7 +20,7 @@ nano /etc/apt/sources.list
 
 ---
 
-## Repositorios Debian Trixie
+## Repositorios
 
 Añade las siguientes líneas al archivo `/etc/apt/sources.list`:
 
@@ -300,6 +300,8 @@ Reinicia el sistema:
 ```bash
 sudo reboot
 ```
+
+Prueba VirtualBox
 
 ---
 
