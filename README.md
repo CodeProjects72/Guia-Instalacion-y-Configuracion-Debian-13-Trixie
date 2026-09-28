@@ -142,7 +142,7 @@ sudo apt install papirus-icon-theme bibata-cursor-themes
 ```
 
 
-## VirtualBox · Instalación y configuración
+## VirtualBox
 
 Actualiza los repositorios e instala las dependencias necesarias para compilar los módulos de VirtualBox:
 
