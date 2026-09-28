@@ -2,9 +2,65 @@
 
 Configuración básica y programas esenciales para una instalación nueva de Linux.
 
+
+## Debian 13 Trixie Agregar repositorios
+
+> Configuración de los repositorios oficiales de Debian Trixie, incluyendo `contrib`, `non-free` y `non-free-firmware`.
+
 ---
 
-## Configuración inicial
+## Abrir la configuración de APT
+
+Accede como `root` y edita el archivo principal de repositorios:
+
+```bash
+su -
+nano /etc/apt/sources.list
+```
+
+---
+
+## Repositorios Debian Trixie
+
+Añade las siguientes líneas al archivo `/etc/apt/sources.list`:
+
+```text
+# Debian Trixie
+deb https://deb.debian.org/debian/ trixie contrib main non-free non-free-firmware
+# deb-src https://deb.debian.org/debian/ trixie contrib main non-free non-free-firmware
+
+# Debian Trixie Updates
+deb https://deb.debian.org/debian/ trixie-updates contrib main non-free non-free-firmware
+# deb-src https://deb.debian.org/debian/ trixie-updates contrib main non-free non-free-firmware
+
+# Debian Trixie Proposed Updates
+deb https://deb.debian.org/debian/ trixie-proposed-updates contrib main non-free non-free-firmware
+# deb-src https://deb.debian.org/debian/ trixie-proposed-updates contrib main non-free non-free-firmware
+
+# Debian Trixie Backports
+deb https://deb.debian.org/debian/ trixie-backports contrib main non-free non-free-firmware
+# deb-src https://deb.debian.org/debian/ trixie-backports contrib main non-free non-free-firmware
+
+# Debian Security
+deb https://security.debian.org/debian-security/ trixie-security contrib main non-free non-free-firmware
+# deb-src https://security.debian.org/debian-security/ trixie-security contrib main non-free non-free-firmware
+```
+
+---
+
+## 03 · Guardar los cambios
+
+En `nano`:
+
+```text
+CTRL + O    → Guardar
+ENTER       → Confirmar
+CTRL + X    → Salir
+```
+
+---
+
+## Actualiza Sistema
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -64,19 +120,29 @@ sudo apt-get install printer-driver-all -y
 ## Programas y paquetes
 
 ```bash
-sudo apt install cmatrix btop htop fastfetch mousepad evince eog ffmpeg obs-studio kdenlive qbittorrent vlc -y
+sudo apt install cmatrix btop htop fastfetch mousepad evince eog ffmpeg obs-studio kdenlive qbittorrent vlc tilix -y
 ```
 
 ---
 
+## Flatpak
 
-# VirtualBox · Instalación y configuración
+```bash
+sudo apt install flatpak
+```
 
-> Instalación de Oracle VirtualBox en Debian Trixie, incluyendo módulos del kernel, repositorio oficial, configuración del usuario y solución de conflictos con KVM.
+```bash
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
 
----
+## Iconos
 
-## Preparar el sistema
+```bash
+sudo apt install papirus-icon-theme bibata-cursor-themes
+```
+
+
+## VirtualBox · Instalación y configuración
 
 Actualiza los repositorios e instala las dependencias necesarias para compilar los módulos de VirtualBox:
 
